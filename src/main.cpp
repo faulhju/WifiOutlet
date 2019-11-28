@@ -1,10 +1,10 @@
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <Ticker.h>
+#include "config.h"
 #include <ArduinoOTA.h>
 #include <PubSubClient.h>
 
-#include "config.h"
 #include "Outlet.h"
 
 
@@ -15,19 +15,16 @@
 #define PIN_DO_RELAIS_1 12
 #define PIN_DO_RELAIS_2 14
 
-#define LEDON    LOW
-#define LEDOFF   HIGH
-
-#define RELAISOPEN    LOW
-#define RELAISCLOSE   HIGH
+#define LEDON     LOW
+#define LEDOFF    HIGH
 
 // global vars
 bool              PIN_RGB_ON = 0;
 
 
 // objects
-Ticker           ticker;
-WiFiClient       espClient;
+Ticker            ticker;
+WiFiClient        espClient;
 void mqttCallback(char* topic, byte* payload, unsigned int length);
 PubSubClient mqttClient(espClient);
 

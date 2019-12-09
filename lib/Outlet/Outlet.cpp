@@ -16,11 +16,11 @@ Outlet::Outlet(int relaisPin)
 
 void Outlet::setState(String state)
 {
-  if(state == "OFF")
+  if(state == "off")
   {
     this->setOff();
   }
-  else if(state == "ON")
+  else if(state == "on")
   {
     this->setOn();
   }
@@ -55,12 +55,12 @@ String Outlet::getStateStr()
 {
   if(this->state == outletState_off)
   {
-    return "OFF";
+    return "off";
   }
   else if (this->state == outletState_on)
   {
-    return "ON";
+    return "on";
   }
 
-  return "ERROR";
+  return "error";
 }

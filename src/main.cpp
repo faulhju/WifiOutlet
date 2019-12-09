@@ -222,6 +222,8 @@ void setup()
 
 
   Serial.print("- Connecting to wifi");
+  WiFi.disconnect();
+  WiFi.mode(WIFI_STA);
   WiFi.begin(SETUP_WIFI_SSID, SETUP_WIFI_PASSWORD);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
